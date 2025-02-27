@@ -1394,11 +1394,11 @@ u8 GetObjectEventIdByLocalId(u8 localId)
 static u8 InitObjectEventStateFromTemplate(const struct ObjectEventTemplate *template, u8 mapNum, u8 mapGroup)
 {
     struct ObjectEvent *objectEvent;
-#if MODERN
-    const struct ObjectEventTemplate *cloneTemplate = template;
-#else
+// #if MODERN
+//     const struct ObjectEventTemplate *cloneTemplate = template;
+// #else
     const struct ObjectEventTemplate_Clone *cloneTemplate = (struct ObjectEventTemplate_Clone*)template;
-#endif
+// #endif
     u8 objectEventId;
     s16 x, y;
     

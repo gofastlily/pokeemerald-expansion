@@ -544,14 +544,14 @@ void LoadObjEventTemplatesFromHeader(void)
             for (i = 0; i < map->events->objectEventCount && n < OBJECT_EVENT_TEMPLATES_COUNT; i++) 
             {
                 const struct ObjectEventTemplate* from = &map->events->objectEvents[i];
-#if MODERN
-                struct ObjectEventTemplate* to = &gSaveBlock1Ptr->objectEventTemplates[n];
-                #define clone to
-#else
+// #if MODERN
+//                 struct ObjectEventTemplate* to = &gSaveBlock1Ptr->objectEventTemplates[n];
+//                 #define clone to
+// #else
                 // This dance with two objects of different types is only needed because agbcc doesn't like anonymous structs
                 struct ObjectEventTemplate_Clone* clone = (struct ObjectEventTemplate_Clone*)&gSaveBlock1Ptr->objectEventTemplates[n];
                 struct ObjectEventTemplate* to = &gSaveBlock1Ptr->objectEventTemplates[n];
-#endif
+// #endif
                 
                 // Skip if too far away from the edge
                 switch (connection->direction) {

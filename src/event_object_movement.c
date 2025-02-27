@@ -1471,7 +1471,7 @@ u8 Unref_TryInitLocalObjectEvent(u8 localId)
         else if (InTrainerHill())
             objectEventCount = HILL_TRAINERS_PER_FLOOR;
         else
-            objectEventCount = gMapHeader.objectEventCount;
+            objectEventCount = gSaveBlock1Ptr->objectEventCount;
 
         for (i = 0; i < objectEventCount; i++)
         {
@@ -2586,7 +2586,7 @@ void TrySpawnObjectEvents(s16 cameraX, s16 cameraY)
         else if (InTrainerHill())
             objectCount = HILL_TRAINERS_PER_FLOOR;
         else
-            objectCount = gMapHeader.objectEventCount;
+            objectCount = gSaveBlock1Ptr->objectEventCount;
 
         for (i = 0; i < objectCount; i++)
         {

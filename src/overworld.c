@@ -607,7 +607,7 @@ void LoadObjEventTemplatesFromHeader(void)
             }
         }
     }
-    gMapHeader.objectEventCount = n;
+    gSaveBlock1Ptr->objectEventCount = n;
     #undef clone
 }
 

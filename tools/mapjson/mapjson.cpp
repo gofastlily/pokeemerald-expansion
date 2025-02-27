@@ -227,8 +227,10 @@ string generate_map_events_text(Json map_data) {
                      << json_to_string(obj_event, "graphics_id") << ", "
                      << json_to_string(obj_event, "x") << ", "
                      << json_to_string(obj_event, "y") << ", "
+                     << json_to_string(obj_event, "elevation") << ", "
                      << json_to_string(obj_event, "target_local_id") << ", "
-                     << json_to_string(obj_event, "target_map") << "\n";
+                     << json_to_string(obj_event, "target_map") << ", "
+                     << json_to_string(obj_event, "trainer_sight_or_berry_tree_id") << "\n";
             } else {
                 FATAL_ERROR("Unknown object event type '%s'. Expected 'object' or 'clone'.\n", type.c_str());
             }
